@@ -12,24 +12,26 @@ public class _Main {
 		Dice player1_dice = new Dice();
 		Board player1_board = new Board();
 		
-		player1_dice.roll_dice();
-		System.out.println("Dice 1: " 
-							+ player1_dice.dice_1);
-		System.out.println("Dice 2: " 
-							+ player1_dice.dice_2);
-		System.out.println("\nResult: " 
-							+ player1_dice.result);
-		
-		if(player1_dice.result <= player1_board.board_locations.length) {
-			player1_board.set_player_position(player1_dice.result);
+		for(int i = 0; i < 3; i++) {
 			
-			System.out.println("\nYou landed on " + player1_board.get_board_location());
-		} else {
-			player1_board.set_player_position(player1_dice.result
-												- player1_board.board_locations.length);
-			System.out.println("\nFull Circle!");
-			System.out.println("You landed on " + player1_board.get_board_location());
+			System.out.println("Turn " + (i+1) + "\n");
+			
+			
+			player1_dice.roll_dice();
+			System.out.println("Dice 1: " 
+								+ player1_dice.dice_1);
+			System.out.println("Dice 2: " 
+								+ player1_dice.dice_2);
+			System.out.println("\nMove " 
+								+ player1_dice.get_rolled_result()
+								+ " Spaces\n");
+			
+			player1_board.set_player_location(player1_dice.get_rolled_result());
+			
+			System.out.println("You have landed on " + player1_board.get_board_location());
+			System.out.println("\nTotal Spaces: " + player1_board.get_player_spaces() + "\n");
+			
+			System.out.println("\n-----------------------------\n");
 		}
-		
 	}
 }
