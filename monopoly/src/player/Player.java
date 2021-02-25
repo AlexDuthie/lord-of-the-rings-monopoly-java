@@ -1,36 +1,44 @@
 package player;
 
 public class Player {
-
-	String name = "Not Declared";
-	int wallet = 1500;
 	
-	String token;
-	public String[] tokens = {
-			"battleship", 
-			"boot", 
-			"cannon",
-			"horse",
-			"rider",
-			"iron", 
-			"racecar", 
-			"dog", 
-			"thimble", 
-			"top hat",
-			"wheelbarrow"
-			};
+	// Player Variables
+	
+	String name = "";
+	int wallet = 1500;
+	String token = "";
+	String property = "";
+	
+	// Setters //
 	
 	public void set_player_name(String new_name) {
 		name = new_name;
 	}
 	
 	public void set_player_wallet(int new_wallet) {
-		wallet = new_wallet;
+		// wallet will increment/ decrement with what gets passed through
+		wallet += new_wallet;
 	}
 	
 	public void set_player_token(int new_token) {
+		String[] tokens = {
+				"Battleship", 
+				"Boot", 
+				"Cannon",
+				"Horse",
+				"Rider",
+				"Iron", 
+				"Racecar", 
+				"Dog", 
+				"Thimble", 
+				"Top Hat",
+				"Wheelbarrow"
+				};
+		
 		token = tokens[new_token];
 	}
+	
+	// Getters //
 	
 	public String get_player_name() {
 		return name.toUpperCase();
