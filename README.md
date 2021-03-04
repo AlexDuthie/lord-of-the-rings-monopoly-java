@@ -1,9 +1,18 @@
 # Monopoly: Lord of the Rings Edition
----
 
-> This is a Java project built in the [Eclipse IDE](https://www.eclipse.org/downloads/)
+> Status: *Work In Progress*
 
-> *Work In Progress*
+> Version: 0.0.1 (CLI)
+
+##  Getting Started
+
+This is a Java project built in the [Eclipse IDE](https://www.eclipse.org/downloads/).
+
+### Prerequisites
+
+
+
+
 
 ## Contributors
 
