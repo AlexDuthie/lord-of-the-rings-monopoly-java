@@ -10,31 +10,25 @@ public class PlayerTokenTest {
 
 	@Test
 	public void test() {
-		// see tokens array below (13-25
-		/*
-		  		String[] tokens = {
-				"Battleship", 
-				"Boot", 
-				"Cannon",
-				"Horse",
-				"Rider",
-				"Iron", 
-				"Racecar", 
-				"Dog", 
-				"Thimble", 
-				"Top Hat",
-				"Wheelbarrow"
-				};
-		 */
-	
 		Player player = new Player();
 		
-		// player token will be position 0 in the tokens array
-		player.set_player_token(0);
+//		public String[][] tokens = {
+//				{"Gandalf", "Welcome Gandalf, on time as always!"},
+//				{"Aragorn", "Welcome Aragorn... or do you still go by Strider?"},
+//				{"Gimli", "Welcome Gimli! You can put the Axe down now..."},
+//				{"Legolas", "Welcome Legolas! Slay any Oliphaunts today?"},
+//				{"Boromir", "Welcome Boromir, Gondor will be by your side!"},
+//				{"Frodo", "Welcome Frodo! ... need me to hold the One Ring while you play?"},
+//				{"Sam", "Welcome Samwise! Did you bring the taters?"},
+//				{"Pippin", "Welcome Pippin! You didn't bring Treebeard this time did you?"},
+//				{"Merry", "Welcome Merry! You look taller... are you taller?"}
+//		};
 		
-		String output = player.get_player_token();
+		player.setPlayerToken(1);
+		
+		String output = player.getPlayerToken();
 	
-		assertEquals("Battleship", output);
+		assertEquals("Gandalf", output);
 	}
 
 }

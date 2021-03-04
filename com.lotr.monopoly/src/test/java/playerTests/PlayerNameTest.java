@@ -12,9 +12,8 @@ public class PlayerNameTest {
 	public void test() {
 		Player player = new Player();
 		
-		player.set_player_name("Alex");
-		
-		String output = player.get_player_name();
+		player.setPlayerName("Alex");
+		String output = player.getPlayerName();
 		
 		assertEquals("Alex", output);
 	}

@@ -26,9 +26,9 @@ public class PlayerLocationTest {
 		// passing 2 spaces on the board through the parameters
 		// this would usually be done using a dice object
 		// the location should be the 2nd location in the board_locations array (Farmer Maggot's Crops)
-		player.set_player_location(2);
+		player.setPlayerLocation(2);
 		
-		String output = player.get_player_location();
+		String output = player.getPlayerLocation();
 		
 		// tested manually several times
 		assertEquals("Farmer Maggot's Crops", output);

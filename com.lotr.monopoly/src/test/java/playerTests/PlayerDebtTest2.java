@@ -14,9 +14,9 @@ public class PlayerDebtTest2 {
 		
 		Player player = new Player();
 		
-		player.set_player_debt(100);
+		player.setPlayerDebt(100);
 		
-		int output = player.get_player_debt();
+		int output = player.getPlayerDebt();
 		
 		assertEquals(100, output);
 	}

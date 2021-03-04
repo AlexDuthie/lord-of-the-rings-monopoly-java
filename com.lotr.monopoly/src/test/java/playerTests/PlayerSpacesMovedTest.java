@@ -17,10 +17,10 @@ public class PlayerSpacesMovedTest {
 		
 		// loops 5 into player spaces 3 times to simulate a dice being thrown 3 times
 		for(int i = 0; i < 3; i++) {
-			player.set_player_spaces(5);
+			player.setPlayerSpaces(5);
 		}
 		
-		int output = player.get_player_spaces();
+		int output = player.getPlayerSpaces();
 		
 		// the spaces should be 15 due to 5 being iterated 3 times
 		assertEquals(15, output);

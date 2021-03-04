@@ -13,9 +13,9 @@ public class PlayerWalletTest {
 		Player player = new Player();
 		
 		// default wallet is 1500, passing 100 through should increment this to 1600
-		player.set_player_wallet(100);
+		player.setPlayerWallet(100);
 		
-		int output = player.get_player_wallet();
+		int output = player.getPlayerWallet();
 		
 		assertEquals(1600, output);
 	}
