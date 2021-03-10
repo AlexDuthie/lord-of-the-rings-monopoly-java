@@ -3,13 +3,9 @@ package game;
 
 public class Player {
 	
-	// player name
 	String name = "";
-	// default wallet
 	int wallet = 1500;
-	// default debt
 	int debt = 0;
-	// tokens a player can be assigned with to move around with
 	public String[][] tokens = {
 			{"Gandalf", "Welcome Gandalf, on time as always!"},
 			{"Aragorn", "Welcome Aragorn... or do you still go by Strider?"},
@@ -21,13 +17,9 @@ public class Player {
 			{"Pippin", "Welcome Pippin! You didn't bring Treebeard this time did you?"},
 			{"Merry", "Welcome Merry! You look taller... are you taller?"}
 	};
-	// token that the player moves with
 	String token = "";
-	// player properties (might need to turn into array)
 	String property = "";
-	// player spaces
-	int player_spaces = 0;
-	// board locations, inspired by Tolkien's Middle Earth
+	int playerMoves = 0;
 	public static String[][] boardLocations = {
 			
 			// Board Corner 1
@@ -80,15 +72,13 @@ public class Player {
 			{"Grey Havens", "400"}
 	};
 	
-	// default starting point
 	String boardLocation = boardLocations[0][0];
 	
 	int boardLocationPrice;
 	
-	// Token
-	
 	public void setPlayerToken(int newToken) {
 		token = tokens[newToken-1][0];
+		
 		System.out.println("\n---\nToken Selected: " + getPlayerToken());
 		System.out.println(tokens[newToken-1][1] + "\n---");
 	}
@@ -96,8 +86,6 @@ public class Player {
 	public String getPlayerToken() {
 		return token;
 	}
-	
-	// Name
 	
 	public void setPlayerName(String newName) {
 		name = newName;
@@ -107,10 +95,7 @@ public class Player {
 		return name;
 	}
 	
-	// Wallet
-	
 	public void setPlayerWallet(int newWallet) {
-		// wallet will increment/ decrement with what gets passed through
 		wallet += newWallet;
 	}
 	
@@ -118,10 +103,7 @@ public class Player {
 		return wallet;
 	}
 	
-	// Debt
-	
 	public void setPlayerDebt(int newDebt) {
-		// debt will increase/ decrease with parameters input
 		debt += newDebt;
 	}
 	
@@ -129,39 +111,32 @@ public class Player {
 		return debt;
 	}
 	
-	// Player Spaces
-	
-	public void setPlayerSpaces(int newPlayerSpaces) {
-		player_spaces += newPlayerSpaces;
+	public void setPlayerMoves(int newPlayerMovesCount) {
+		playerMoves += newPlayerMovesCount;
 	}
 	
-	public int getPlayerSpaces() {
-		return player_spaces;
+	public int getPlayerMoves() {
+		return playerMoves;
 	}
 	
-	// Player Location
-	
-	public void setPlayerLocation(int playerSpaces) {
-		// condition to prevent error when surpassing the board length
-		if(playerSpaces >= boardLocations.length) {
+	public void setPlayerLocation(int playerMoves) {
+		if(playerMoves >= boardLocations.length) {
 			System.out.println("You passed " + getPlayerLocation());
 			
-			boardLocation = boardLocations[playerSpaces - boardLocations.length][0];
+			boardLocation = boardLocations[playerMoves - boardLocations.length][0];
 			
-			boardLocationPrice = Integer.parseInt(boardLocations[playerSpaces - boardLocations.length][1]);
+			boardLocationPrice = Integer.parseInt(boardLocations[playerMoves - boardLocations.length][1]);
 			
 			setPlayerWallet(Integer.parseInt(boardLocations[0][1]));
 		} else {
-			boardLocation = boardLocations[playerSpaces][0];
-			boardLocationPrice = Integer.parseInt(boardLocations[playerSpaces][1]);
+			boardLocation = boardLocations[playerMoves][0];
+			boardLocationPrice = Integer.parseInt(boardLocations[playerMoves][1]);
 		}
 	}
 	
 	public String getPlayerLocation() {
 		return boardLocation;
 	}
-	
-	// Location Price
 	
 	public int getPlayerLocationPrice() {
 		return boardLocationPrice;
