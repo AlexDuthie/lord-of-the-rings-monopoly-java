@@ -13,9 +13,9 @@ public class Dice2Test {
 		Dice dice = new Dice();
 		
 		for(int i = 0; i < 10000; i++) {
-			dice.rollDice2();
+			dice.rollSecondDice();
 			
-			int output = dice.getRolledDice2();
+			int output = dice.getSecondDiceNum();
 				
 			assertTrue(output > 0 && output < 7);
 		}

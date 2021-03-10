@@ -13,12 +13,12 @@ public class DiceTest {
 		Dice dice = new Dice();
 		
 		// method that rolls dice 1 and dice 2
-		dice.roll_dice();
+		dice.rollDice();
 		
 		// gets dice 1's result
-		int output1 = dice.getRolledDice1();
+		int output1 = dice.getFirstDiceNum();
 		// gets dice 2's result
-		int output2 = dice.getRolledDice2();
+		int output2 = dice.getSecondDiceNum();
 		
 		// combines dice 1 and dice 2 in a new declaration
 		int output = output1 + output2;
