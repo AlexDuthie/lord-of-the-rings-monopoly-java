@@ -10,12 +10,15 @@ public class Dice {
 	
 	Random randomise = new Random();
 	
-	public int firstDieNumber;
-	public int secondDieNumber;
-	public int rolledDiceNumber;
+	public int firstDieNumber = 0;
+	public int secondDieNumber = 0;
+	public int rolledDiceNumber = 0;
 	
 	public void rollFirstDice() {
-		firstDieNumber = randomise.nextInt(1+6);
+		
+		do {
+			firstDieNumber = randomise.nextInt(1+6);			
+		} while(firstDieNumber == 0);
 	}
 	
 	public int getFirstDiceNum() {
@@ -23,7 +26,9 @@ public class Dice {
 	}
 	
 	public void rollSecondDice() {
-		secondDieNumber = randomise.nextInt(1+6);
+		do {
+			secondDieNumber = randomise.nextInt(1+6);			
+		} while(secondDieNumber == 0);
 	}
 	
 	public int getSecondDiceNum() {
@@ -31,15 +36,10 @@ public class Dice {
 	}
 	
 	public int rollDice() {
-		System.out.println("\nRoll Dice? (Yes or No)");
-		String answer = input.nextLine().toLowerCase();
+		rollFirstDice();
+		rollSecondDice();
 		
-		if(answer.equals("yes")) {
-			rollFirstDice();
-			rollSecondDice();
-		}
-		
-		rolledDiceNumber = getFirstDiceNum() + getSecondDiceNum();
+		rolledDiceNumber = (getFirstDiceNum() + getSecondDiceNum());
 		
 		return rolledDiceNumber;
 	}
